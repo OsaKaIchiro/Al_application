@@ -1,19 +1,27 @@
-# python3.9のイメージをダウンロード
-FROM python:3.9-buster
-ENV PYTHONUNBUFFERED=1
+FROM python:3.11
 
-WORKDIR /src
+WORKDIR /app
+FROM python:3.11
 
-# pipを使ってpoetryをインストール
-RUN pip install poetry
+WORKDIR /app
 
-# poetryの定義ファイルをコピー
-COPY pyproject.toml poetry.lock ./
+# 必要なシステムパッケージをインストール
+RUN apt-get update && apt-get install -y curl git \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# poetryでライブラリをインストール (pyproject.tomlが存在する場合)
-RUN poetry config virtualenvs.in-project true
+# Poetryをダウンロードしてインストール
+RUN curl -sSL https://install.python-poetry.org | python -
+
+# Pathを通す
+ENV PATH /root/.local/bin:$PATH
+# 仮想環境をたてない
+RUN poetry config virtualenvs.create false
+
+# アプリケーションの依存関係をインストール
+COPY pyproject.toml poetry.lock /app/
 RUN poetry install --no-root
 
+COPY ./app /app/app
 
-# uvicornのサーバーを立ち上げる
-ENTRYPOINT ["poetry", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--reload"]
+ENTRYPOINT ["sh", "-c", "poetry run uvicorn app.main:app --reload --host 0.0.0.0 --port 8000"]

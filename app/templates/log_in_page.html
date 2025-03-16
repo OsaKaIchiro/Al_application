@@ -5,27 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="app/static/css/log_in_page.css">
+    <link rel="stylesheet" type="text/css" href="/static/style_login.css">
 </head>
 
 <body>
-    <h1>新規登録</h1>
+    <h1>からくり人形、エトえもん</h1>
     <hr class="under_line">
-    {% if success1 == 0 %}
-    <p class="error_message">※アカウント名が既に存在します。別のアカウント名で登録してください。</p>
-    {% endif %}
-    {% if success2 == 0 %}
-    <p class="error_message">※エラー、無効なパスワード。</p>
-    {% endif %}
     <form method="post" class="text">
         <label for="n1">Username</label>
-        <input type="text" name="info_username_2" id="n1">
+        <input type="text" name="info_username_1" id="n1">
         <br>
         <label for="n2">Password</label>
-        <input type="text" name="info_password_2" placeholder="英数字８字以上(a~z,0~9)" id="n2">
+        <input type="password" name="info_password_1" id="n2">
         <br>
-        <input type="submit" value="登録完了" class="button">
+        <input type="submit" value="ログイン" class="button">
     </form>
+    <br>
+    {% if success == 0 %}
+    <p id="error_message">※認証に失敗しました。'Username'もしくは'Password'が間違っている可能性があります。</p>
+    {% endif %}
+    <hr class="under_line">
+    <div class="text">
+        <p>アカウント新規作成はこちらから↓↓</p>
+        <a href="/new" class="button">新規登録</a>
+    </div>
 </body>
 
 </html>

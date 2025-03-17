@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, DateTime
+from sqlalchemy import Column, Integer, String, Date
 from app.db import Base
 
 
@@ -13,6 +13,10 @@ class User(Base):
     }
 
     id = Column('id', Integer, primary_key=True, autoincrement=True)
-    username = Column('username', String(200))
-    password = Column('password', String(200))
+    username = Column('username', String(200), nullable = False)
+    password = Column('password', String(200), nullable = False)
+    credits = Column('credits', Integer)
+    practice_rank = Column('practice_rank', Integer)
+    casual_rank = Column('casual_rank', Integer)
+    date = Column('date', Date)
 

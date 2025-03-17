@@ -1,3 +1,4 @@
+#cspell:ignore AUTHTOKEN NGROK dockervenv venv
 services:
   app:
     build:
@@ -25,5 +26,15 @@ services:
     ports:
       - "33306:3306"  # ローカルホストにバインドして外部からのアクセスを防ぐ
     tty: true
+  
+  ngrok:
+    image: ngrok/ngrok:latest
+    ports:
+      - "4040:4040" # ngrokの管理画面にアクセスするためのポート
+    environment:
+      NGROK_AUTHTOKEN: "YOUR_NGROK_AUTHTOKEN" # ngrokの認証トークン
+      NGROK_COMMAND: "http app:8000" # appコンテナの8000番ポートを公開
+    depends_on:
+      - app
 volumes:
   mysql_data:

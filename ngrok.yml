@@ -1,0 +1,19 @@
+# version: "2"
+# authtoken: 2uQNec6LpYgP8RxQSAjedt0ztil_69EjiAvrZKEHkqfwSCHoR
+# tunnels:
+#   nginx:
+#     proto: http
+#     addr: nginx:8000 #ここに接続したいサービス
+#     host_header: rewrite
+
+
+version: "2"
+authtoken: "2uQNec6LpYgP8RxQSAjedt0ztil_69EjiAvrZKEHkqfwSCHoR" # あなたのngrok認証トークン
+tunnels:
+  nginx:
+    proto: http
+    addr: nginx:80 # nginxコンテナの80番ポートに接続
+    host_header: rewrite
+  app:
+    proto: http
+    addr: app:8000 # appコンテナの8000番

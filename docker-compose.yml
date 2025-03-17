@@ -1,4 +1,45 @@
-#cspell:ignore AUTHTOKEN NGROK dockervenv venv
+# #cspell:ignore AUTHTOKEN NGROK dockervenv venv
+# services:
+#   app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     volumes:
+#       - .dockervenv:/app/.venv
+#       - .:/app
+#     ports:
+#       - "8000:8000"
+#     env_file:
+#       - .env  # 環境変数を.envファイルから読み込む
+#     depends_on:
+#       - db
+#   db:
+#     image: mysql:8.0
+#     container_name: db
+#     environment:
+#       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+#       MYSQL_DATABASE: 'demo'
+#       TZ: 'Asia/Tokyo'
+#     volumes:
+#       - mysql_data:/var/lib/mysql
+#     command: --default-authentication-plugin=mysql_native_password
+#     ports:
+#       - "33306:3306"  # ローカルホストにバインドして外部からのアクセスを防ぐ
+#     tty: true
+  
+#   ngrok:
+#     image: ngrok/ngrok:latest
+#     ports:
+#       - "4040:4040" # ngrokの管理画面にアクセスするためのポート
+#     environment:
+#       NGROK_AUTHTOKEN: 2uQNec6LpYgP8RxQSAjedt0ztil_69EjiAvrZKEHkqfwSCHoR # ngrokの認証トークン
+#       NGROK_COMMAND: "http app:8000" # appコンテナの8000番ポートを公開
+#     depends_on:
+#       - app
+# volumes:
+#   mysql_data:
+
+version: "3.8"
 services:
   app:
     build:
@@ -10,7 +51,7 @@ services:
     ports:
       - "8000:8000"
     env_file:
-      - .env  # 環境変数を.envファイルから読み込む
+      - .env
     depends_on:
       - db
   db:
@@ -24,17 +65,23 @@ services:
       - mysql_data:/var/lib/mysql
     command: --default-authentication-plugin=mysql_native_password
     ports:
-      - "33306:3306"  # ローカルホストにバインドして外部からのアクセスを防ぐ
+      - "33306:3306"
     tty: true
-  
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    ports:
+      - 80:80
+    depends_on:
+      - app
   ngrok:
     image: ngrok/ngrok:latest
     ports:
-      - "4040:4040" # ngrokの管理画面にアクセスするためのポート
+      - "4040:4040"
     environment:
-      NGROK_AUTHTOKEN: "YOUR_NGROK_AUTHTOKEN" # ngrokの認証トークン
-      NGROK_COMMAND: "http app:8000" # appコンテナの8000番ポートを公開
+      NGROK_AUTHTOKEN: 2uQNec6LpYgP8RxQSAjedt0ztil_69EjiAvrZKEHkqfwSCHoR
+      NGROK_COMMAND: "http nginx:80" # nginxの80番ポートを公開するように変更
     depends_on:
-      - app
+      - nginx # nginxに依存するように変更
 volumes:
   mysql_data:

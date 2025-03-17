@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     font-family: sans-serif;
     background-color: #f4f4f4;
@@ -62,4 +63,72 @@ input[type="password"] {
 #error_message {
     color: red;
     margin-top: 10px;
+=======
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, white, gray);
+}
+
+h1 {
+    padding: 0 0.5em;
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    font-size: 3em;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 43%;
+    /* 角丸       */
+    font-size: 19pt;
+    /* 文字サイズ */
+    text-align: center;
+    /* 文字位置   */
+    cursor: pointer;
+    /* カーソル   */
+    padding: 17px 28px;
+    /* 余白       */
+    background: #ffffff;
+    /* 背景色     */
+    color: #000000;
+    /* 文字色     */
+    line-height: 1em;
+    /* 1行の高さ  */
+    opacity: 0.9;
+    /* 透明度     */
+    transition: .3s;
+    /* なめらか変化 */
+    box-shadow: 8px 8px #666666;
+    /* 影の設定 */
+    border: 2px solid #000000;
+}
+
+.button:hover {
+    box-shadow: none;
+    /* カーソル時の影消去 */
+    opacity: 1;
+    /* カーソル時透明度 */
+}
+
+.under_line {
+    height: 10px;
+    color: gray;
+    background-color: gray;
+    border-color: gray;
+}
+
+.text {
+    font-size: 24px;
+    text-align: center;
+}
+
+#error_message {
+    font-size: 16px;
+>>>>>>> 0b6ff4517f83c43d1233e7cc707efb53a6747818
 }

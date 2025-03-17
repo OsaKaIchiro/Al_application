@@ -45,14 +45,6 @@ body:after {
     width: 30%;
 }
 
-.gohome {
-    position: absolute;
-    z-index: 100;
-    width: 100%;
-    height: 30%;
-    font-size: 32px;
-}
-
 .home img {
     position: absolute;
     z-index: 50;
@@ -61,6 +53,10 @@ body:after {
     border: solid 1px orange;
     border-radius: 10px;
     cursor: pointer
+}
+
+.img{
+    margin-top: 22px;
 }
 
 .aiai {

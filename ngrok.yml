@@ -1,0 +1,7 @@
+version: "2"
+authtoken: "YOUR_NGROK_AUTHTOKEN"
+tunnels:
+  website:
+    proto: http
+    addr: host.docker.internal:80
+    host_header: rewrite

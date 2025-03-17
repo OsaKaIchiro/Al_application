@@ -13,6 +13,7 @@ services:
       - .env  # 環境変数を.envファイルから読み込む
     depends_on:
       - db
+    restart: unless-stopped
   db:
     image: mysql:8.0
     container_name: db
@@ -26,7 +27,7 @@ services:
     ports:
       - "33306:3306"  # ローカルホストにバインドして外部からのアクセスを防ぐ
     tty: true
-  
+    restart: unless-stopped
   ngrok:
     image: ngrok/ngrok:latest
     ports:

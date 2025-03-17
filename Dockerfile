@@ -1,3 +1,4 @@
+#cspell:ignore pyproject uvicorn virtualenvs
 FROM python:3.11
 
 WORKDIR /app
@@ -5,7 +6,8 @@ WORKDIR /app
 # 必要なシステムパッケージをインストール
 RUN apt-get update && apt-get install -y curl git \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*\
+    && pip install --upgrade pip
 
 # Poetryをダウンロードしてインストール
 RUN curl -sSL https://install.python-poetry.org | python -

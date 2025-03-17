@@ -1,134 +1,54 @@
-<<<<<<< HEAD
-body {
-    font-family: sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-}
-
-h1 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.under_line {
-    width: 80%;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-}
-
-.text {
-    width: 300px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
-}
-
-input[type="text"],
-input[type="password"] {
-    width: calc(100% - 12px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-}
-
-.button:hover {
-    background-color: #0056b3;
-}
-
-#error_message {
-    color: red;
-    margin-top: 10px;
-=======
 @charset "UTF-8";
 
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
-body {
-    background: linear-gradient(to right, white, gray);
+body{
+    background:linear-gradient(to right,white,gray);
 }
 
 h1 {
-    padding: 0 0.5em;
-    color: white;
+    padding:0 0.5em;
+    color:white;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
-    font-size: 3em;
+    font-size:3em;
 }
 
 .button {
-    display: inline-block;
-    border-radius: 43%;
-    /* 角丸       */
-    font-size: 19pt;
-    /* 文字サイズ */
-    text-align: center;
-    /* 文字位置   */
-    cursor: pointer;
-    /* カーソル   */
-    padding: 17px 28px;
-    /* 余白       */
-    background: #ffffff;
-    /* 背景色     */
-    color: #000000;
-    /* 文字色     */
-    line-height: 1em;
-    /* 1行の高さ  */
-    opacity: 0.9;
-    /* 透明度     */
-    transition: .3s;
-    /* なめらか変化 */
-    box-shadow: 8px 8px #666666;
-    /* 影の設定 */
-    border: 2px solid #000000;
+    display       : inline-block;
+    border-radius : 43%;          /* 角丸       */
+    font-size     : 19pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 17px 28px;   /* 余白       */
+    background    : #ffffff;     /* 背景色     */
+    color         : #000000;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    opacity       : 0.9;         /* 透明度     */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 8px 8px #666666;  /* 影の設定 */
+    border        : 2px solid #000000;
 }
 
 .button:hover {
-    box-shadow: none;
-    /* カーソル時の影消去 */
-    opacity: 1;
-    /* カーソル時透明度 */
+    box-shadow    : none;        /* カーソル時の影消去 */
+    opacity       : 1;           /* カーソル時透明度 */
 }
 
-.under_line {
-    height: 10px;
-    color: gray;
-    background-color: gray;
-    border-color: gray;
+.under_line{
+    height:10px;
+    color:gray;
+    background-color:gray;
+    border-color:gray;
 }
 
-.text {
-    font-size: 24px;
-    text-align: center;
+.text{
+    font-size:24px;
+    text-align:center;
 }
 
-#error_message {
-    font-size: 16px;
->>>>>>> 0b6ff4517f83c43d1233e7cc707efb53a6747818
+#error_message{
+    font-size:16px;
 }

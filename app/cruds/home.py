@@ -5,4 +5,3 @@ import app.schemas.home as home_money_schema
 
 
 async def get_home(db: AsyncSession, ):
-    

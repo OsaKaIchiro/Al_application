@@ -4,43 +4,43 @@
 
 ## ディレクトリ構造
 
-├── app
-│   ├── init.py
-│   ├── main.py
-│   ├── schemas
-│   │   ├── init.py
-│   │   └── task.py
-│   ├── routers
-│   │   ├── init.py
-│   │   └── task.py
-│   ├── models
-│   │   ├── init.py
-│   │   └── task.py
-│   ├── cruds
-│   │   ├── init.py
-│   │   └── task.py
-│   ├── templates
-│   │   ├── log_in_page.html
-│   │   ├── home.html
-│   │   ├── ranking.html
-│   │   ├── practice_mode.html
-│   │   └── casual_mode.html
-│   └── static
-│       ├── css
-│       │   ├── log_in_page.css
-│       │   ├── home.css
-│       │   ├── ranking.css
-│       │   ├── practice_mode.css
-│       │   └── casual_mode.css
-│       └── js
-│           ├── home.js
-│           ├── ranking.js
-│           ├── practice_mode.js
-│           ├── casual_mode.js
-├── docker-compose.yml
-├── poetry.lock
-├── pyproject.toml
-└── Dockerfile
+├── app  
+│   ├── init.py  
+│   ├── main.py  
+│   ├── schemas  
+│   │   ├── init.py  
+│   │   └── task.py  
+│   ├── routers  
+│   │   ├── init.py  
+│   │   └── task.py  
+│   ├── models  
+│   │   ├── init.py  
+│   │   └── task.py  
+│   ├── cruds  
+│   │   ├── init.py  
+│   │   └── task.py  
+│   ├── templates  
+│   │   ├── log_in_page.html  
+│   │   ├── home.html  
+│   │   ├── ranking.html  
+│   │   ├── practice_mode.html  
+│   │   └── casual_mode.html  
+│   └── static  
+│       ├── css  
+│       │   ├── log_in_page.css  
+│       │   ├── home.css  
+│       │   ├── ranking.css  
+│       │   ├── practice_mode.css  
+│       │   └── casual_mode.css  
+│       └── js  
+│           ├── home.js  
+│           ├── ranking.js  
+│           ├── practice_mode.js  
+│           ├── casual_mode.js  
+├── docker-compose.yml  
+├── poetry.lock  
+├── pyproject.toml  
+└── Dockerfile  
 
 
 * `app/`: アプリケーションのソースコード

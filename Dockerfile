@@ -13,7 +13,6 @@ RUN curl -sSL https://install.python-poetry.org | python -
 # Pathを通す
 ENV PATH /root/.local/bin:$PATH
 
-
 # poetryの定義ファイルをコピー (存在する場合)
 COPY pyproject.toml* poetry.lock* ./
 

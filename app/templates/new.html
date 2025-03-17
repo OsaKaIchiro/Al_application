@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/style_login.css">
+</head>
+
+<body>
+    <h1>新規登録</h1>
+    <hr class="under_line">
+    {% if success1 == 0 %}
+    <p class="error_message">※アカウント名が既に存在します。別のアカウント名で登録してください。</p>
+    {% endif %}
+    {% if success2 == 0 %}
+    <p class="error_message">※エラー、無効なパスワード。</p>
+    {% endif %}
+    <form method="post" class="text">
+        <label for="n1">Username</label>
+        <input type="text" name="info_username_2" id="n1">
+        <br>
+        <label for="n2">Password</label>
+        <input type="text" name="info_password_2" placeholder="英数字８字以上(a~z,0~9)" id="n2">
+        <br>
+        <input type="submit" value="登録完了" class="button">
+    </form>
+</body>
+
+</html>

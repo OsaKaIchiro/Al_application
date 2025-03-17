@@ -1,3 +1,4 @@
+#cspell:ignore pyproject uvicorn virtualenvs
 FROM python:3.11
 
 WORKDIR /app

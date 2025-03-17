@@ -1,7 +1,10 @@
 version: "2"
-authtoken: "YOUR_NGROK_AUTHTOKEN"
+authtoken: "2uQNec6LpYgP8RxQSAjedt0ztil_69EjiAvrZKEHkqfwSCHoR" # あなたのngrok認証トークン
 tunnels:
-  website:
+  nginx:
     proto: http
-    addr: host.docker.internal:80
+    addr: nginx:80 # nginxコンテナの80番ポートに接続
     host_header: rewrite
+  app:
+    proto: http
+    addr: app:8000 # appコンテナの8000番

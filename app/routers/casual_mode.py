@@ -1,30 +1,73 @@
-from fastapi import APIRouter, Request, Form, Depends, Cookie
+from fastapi import APIRouter, Request, Form
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import HTMLResponse
 from app.db import get_db
+from app.models.table import User, Practice_context
+import random
+from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.schemas.casual_mode import ContextPut
-from app.cruds.casual_mode import put_context
+from sqlalchemy.orm import sessionmaker
+import asyncio
+from fastapi import Depends
 
 router = APIRouter()
 templates = Jinja2Templates(directory="app/templates")
 
-# practice_modeに移動したときpractice_mode.htmlが返される
-@router.get('/practice_mode', response_class=HTMLResponse)
-async def get_practice_mode(request: Request):
-    return templates.TemplateResponse('practice_mode.html', {'request': request})
+async def get_contents_list(session: AsyncSession):
+    count_all = await session.scalar(select(func.count()).select_from(select(Practice_context).subquery()))
+    if count_all >= 10:
+        data_list = random.sample(range(1, count_all + 1), 10)
+        contents_list = []
+        for i in data_list:
+            no_name = await session.get(Practice_context, i)
+            if no_name:
+                contents_list.append(no_name.context)
+        return contents_list
+    elif count_all == 0:
+        return []
+    else:
+        contents_list = []
+        for i in range(1, count_all + 1):
+            no_name = await session.get(Practice_context, i)
+            if no_name:
+                contents_list.append(no_name.context)
+        return contents_list
 
-# 質問がクライント側と側から送信される
-@router.post('/practice_mode', response_model=ContextPut)
-async def practice(request: Request, context: str = Form(...), db: AsyncSession = Depends(get_db), username: str = Cookie(None)):
-    if username is None:
-        return RedirectResponse('/log_in_page', status_code=303)
-    response = await put_context(db, username, context)
-    return response
+@router.get('/casual_mode', response_class=HTMLResponse)
+async def get(request: Request, session: AsyncSession = Depends(get_db)):
+    contents_list = await get_contents_list(session)
+    return templates.TemplateResponse(
+        'casual_mode.html',
+        {
+            'request': request,
+            'contents_list': contents_list
+        }
+    )
 
-# AIのAPIを使って、contextを送って[はい]か[いいえ]で受け取る.
-# それをデータベースに保存してほしい
+@router.post('/casual_mode', response_class=HTMLResponse)
+async def post(request: Request, idea_data: str = Form(...), session: AsyncSession = Depends(get_db)):
+    practice_context = Practice_context(username = 'qqq', context=idea_data) #usernameは適宜変更してください。
+    session.add(practice_context)
+    await session.commit()
+    contents_list = await get_contents_list(session)
+    return templates.TemplateResponse(
+        'casual_mode.html',
+        {
+            'request': request,
+            'contents_list': contents_list
+        }
+    )
+
+@router.get('/home', response_class=HTMLResponse)
+async def get_home(request: Request):
+    return templates.TemplateResponse(
+        'home.html',
+        {
+            'request': request
+        }
+    )
+
 
 
 

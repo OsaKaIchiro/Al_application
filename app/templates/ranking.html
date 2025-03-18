@@ -4,29 +4,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Money Ranking</title>
+    <link rel="stylesheet" type="text/css" href="/static/ranking.css">
+    <title>ランキング</title>
 </head>
+<style>
+    body {
+        /* 背景画像の設定 */
+        background-image: url('photo/Gemini_Generated_Image_sgvptrsgvptrsgvp.jpg');
+        /* 画像のパスを指定 */
+        background-size: cover;
+        /* 背景画像を画面サイズに合わせて拡大縮小 */
+        background-position: center;
+        /* 画像の位置を中央に設定 */
+        background-attachment: fixed;
+        /* 背景画像を固定 */
+        margin: 0;
+        /* ページの余白をなくす */
+        height: 100%;
+        /* ビューポートの高さを100%に設定 */
+        width: 95%;
+        z-index: 0;
+    }
+
+    body::before {
+        content: "";
+        background-color: rgba(225, 225, 225, 0.8);
+        position: fixed;
+        /*↑ぼかしを全画面にするのに重要*/
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 105%;
+        height: 105%;
+        z-index: 1;
+        background-size: cover;
+        background-attachment: fixed;
+        margin: 0;
+    }
+
+    h1,
+    p,
+    li,
+    nav,
+    aside,
+    footer,
+    p1,
+    h3 {
+        z-index: 7;
+        position: relative;
+        -moz-box-align: center;
+    }
+
+    aside {
+        /*background-image: url('photo/Gemini_Generated_Image_x6cprex6cprex6cp.jpg'); /* 画像のパスを指定 */
+        background-size: 100%;
+        /* 背景画像を画面サイズに合わせて拡大縮小 */
+        background-position: center;
+        /* 画像の位置を中央に設定 */
+        background-repeat: no-repeat;
+        height: 100%;
+        /* ビューポートの高さを100%に設定 */
+        width: 95%;
+        z-index: 2;
+        border-radius: 20px;
+        margin-top: -10px;
+        border-radius: 50px;
+    }
+
+    aside::before {
+        content: "";
+        /*background-color: rgba(225, 225, 225, 0.4);*/
+        position: fixed;
+        /*↑ぼかしを全画面にするのに重要*/
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 105%;
+        height: 105%;
+        z-index: 3;
+        background-size: cover;
+        background-attachment: fixed;
+        margin: 0;
+    }
+</style>
+<script>
+    function goClick() {
+        // クリック時の動作を指定できます
+        location.href = "home.html";
+    }
+</script>
 
 <body>
-    <h1>Practice Money Ranking</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Rank</th>
-                <th>Username</th>
-                <th>Credits</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for user in ranking %}
-            <tr>
-                <td>{{ user.rank }}</td>
-                <td>{{ user.username }}</td>
-                <td>{{ user.credits }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <img src="photo/S__10502154.jpg" class="button" onclick="goClick()" width="200" height="120" alt="サンプルボタン">
+    <header>
+        <h1>
+            ランキング
+        </h1>
+    </header>
+    <nav>
+        <ul>
+            <li class="nav0">
+                <a href="ranking.html">らんきんぐ１</a><br>
+            </li>
+            <li class="nav">
+                <a href="ranking2.html">らんきんぐ２</a><br>
+            </li>
+            <li class="nav">
+                <a href="ranking3.html">らんきんぐ３</a><br>
+            </li>
+        </ul>
+    </nav>
+    <aside>
+    </aside>
+
+    <main>
+        <p>
+            <li class="ranking">
+                １位
+            </li>
+            <li class="ranking">
+                ２位
+            </li>
+            <li class="ranking">
+                ３位
+            </li>
+            <li class="ranking">
+                自分
+            </li>
+        </p>
+    </main>
+    <footer></footer>
 </body>
 
 </html>

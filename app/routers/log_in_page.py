@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 from fastapi import APIRouter, Request, Form, Depends, Response
+=======
+from fastapi import APIRouter , Request , Form  , Depends 
+>>>>>>> 574f185703c98dad69af710fa8347fd87ac67ed9
 from fastapi.templating import Jinja2Templates
-from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse, RedirectResponse
 from app.db import get_db
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -8,10 +11,15 @@ from app.schemas.log_in_page import UserResponse, LoginResponse, NewUserResponse
 from app.cruds.log_in_page import create_user, sign_in
 from app.cruds.home import get_money
 
+
 router = APIRouter()
 templates = Jinja2Templates(directory="app/templates")
 
+<<<<<<< HEAD
 #ルートディレクトリに入った時.htmlが返される
+=======
+#ルートディレクトリに入った時a.htmlが返される
+>>>>>>> 574f185703c98dad69af710fa8347fd87ac67ed9
 @router.get('/', response_class=HTMLResponse)
 async def get(request: Request):
     return templates.TemplateResponse('a.html', {'request': request})

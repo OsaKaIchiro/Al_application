@@ -1,4 +1,3 @@
-#cspell: ignore GLTF
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -9,7 +8,7 @@
     <script src="https://unpkg.com/alpinejs" defer></script>
     <script src="https://unpkg.com/three@latest/build/three.min.js"></script>
     <script src="https://unpkg.com/three/examples/js/loaders/GLTFLoader.js"></script>
-    <link rel="stylesheet" href="../static/home.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/app/static/home.css') }}">
 </head>
 
 <body x-data="{ money: {{ credits }} }">
@@ -20,7 +19,7 @@
         </div>
         <div class="right-panel">
             <button class="button" @click="location.href='仮_practice.html'">仮_Practice モード</button>
-            <button class="button" @click="location.href='仮_casual.html'">仮_casual モード</button>
+            <button class="button" @click="location.href='casual_mode.html'">casual モード</button>
         </div>
     </div>
 
@@ -30,7 +29,7 @@
         <button class="button" @click="location.href='仮_options.html'">仮_オプション</button>
     </div>
 
-    <script src="../static/home.js"></script>
+    <script src="{{ url_for('static', path='/app/static/home.js') }}"></script>
 </body>
 
 </html>

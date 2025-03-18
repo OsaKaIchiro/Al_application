@@ -14,3 +14,4 @@ class NewUserResponse(BaseModel):
 
 class UserAndPassword(UserResponse):
     password: str = None
+    

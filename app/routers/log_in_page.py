@@ -1,19 +1,24 @@
-from fastapi import APIRouter , Request , Form  , Depends 
+from fastapi import APIRouter , Request , Form  , Depends
 from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse, RedirectResponse
 from app.db import get_db
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.schemas.log_in_page import UserResponse, LoginResponse, NewUserResponse
 from app.cruds.log_in_page import create_user, sign_in
-
+from app.cruds.home import get_money
 
 router = APIRouter()
 templates = Jinja2Templates(directory = "app/templates")
 
 #ルートディレクトリに入った時log_onA_page.htmlが返される
-@router.get('/'
-'', response_class=HTMLResponse)
+@router.get('/', response_class=HTMLResponse)
 async def get(request: Request):
+    return templates.TemplateResponse('a.html', {'request': request})
+
+# ログインページに入った時log_in_page.htmlが返される
+@router.get('/log_in_page', response_class=HTMLResponse)
+async def get_log_in_page(request: Request):
     return templates.TemplateResponse('log_in_page.html', {'request': request})
 
 #サインイン時
@@ -21,9 +26,12 @@ async def get(request: Request):
 async def post(request: Request, info_username_1: str = Form(...), info_password_1: str = Form(...), db: AsyncSession = Depends(get_db)):
     response = await sign_in(db, info_username_1, info_password_1)
     if response.success:
-        return templates.TemplateResponse('home.html',{'request' : request})
+        credits_response = await get_money(db, info_username_1)
+        return templates.TemplateResponse('home.html', {'request': request, 'username': info_username_1, 'credits': credits_response.credits})
     else:
         return templates.TemplateResponse('log_in_page.html', {'request': request, 'success': response.success})
+    
+
 
 #ログイン時に/newに移動する
 @router.get('/new' , response_class=HTMLResponse)

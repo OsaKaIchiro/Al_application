@@ -1,7 +1,7 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 import app.models.table as Practice_Mode
 from sqlalchemy.future import select
-import app.schemas.practice_mode as practice
+import app.schemas.casual_mode as practice
 
 async def put_context(db: AsyncSession, info_username: str, context: str) -> practice.ContextPut:
     new_context = Practice_Mode.Practice_context(username=info_username, context=context)

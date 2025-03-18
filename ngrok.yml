@@ -1,5 +1,5 @@
 version: "2"
-authtoken: "2uQNec6LpYgP8RxQSAjedt0ztil_69EjiAvrZKEHkqfwSCHoR" # あなたのngrok認証トークン
+authtoken: ${NGROK_AUTHTOKEN} # あなたのngrok認証トークン
 tunnels:
   nginx:
     proto: http

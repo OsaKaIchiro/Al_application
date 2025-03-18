@@ -17,7 +17,7 @@ async def get(request: Request):
     return templates.TemplateResponse('log_in_page.html', {'request': request})
 
 #サインイン時
-@router.post('/log_in_page', response_model=HTMLResponse)
+@router.post('/log_in_page', response_class=HTMLResponse)
 async def post(request: Request, info_username_1: str = Form(...), info_password_1: str = Form(...), db: AsyncSession = Depends(get_db)):
     response = await sign_in(db, info_username_1, info_password_1)
     if response.success:

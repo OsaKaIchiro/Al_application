@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/app/static/log_in_page.css') }}">
 </head>
-
 <body>
-    <h1>ログイン画面</h1>
+    <h1>ログイン</h1>
     <hr class="under_line">
     <form method="post" class="text">
         <label for="n1">Username</label>
@@ -22,13 +20,24 @@
     </form>
     <br>
     {% if success == 0 %}
-    <p id="error_message">※認証に失敗しました。'Username'もしくは'Password'が間違っている可能性があります。</p>
+        <p id="error_message">※認証に失敗しました。'Username'もしくは'Password'が間違っている可能性があります。</p>
     {% endif %}
     <hr class="under_line">
     <div class="text">
         <p>アカウント新規作成はこちらから↓↓</p>
-        <a href="/new" class="button">新規登録</a>
+        <a href="new.html" class="button">新規登録</a>
     </div>
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+</ul>
 </body>
-
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/app/static/casual_mode.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
@@ -16,43 +16,30 @@
     <div class="header">
 
         <div class="home">
-            <img src="yajirushi_page-0001.jpg" alt="矢印" class="img">
+            <a href="/home" class="img_link">
+                <img src="{{ url_for('static', path='/app/static/pictures/yajirushi_page-0001.jpg') }}" alt="矢印" class="img">
+            </a>
         </div>
 
         <div class="aiai">AI質問設立</div>
     </div>
 
+    <form method="put" class="koushin">
+        <input type="submit" value="更新" class="button_2">      &nbsp; 
+    </form>
+    <form method="post" class="form">
+        <input type="text" name="idea_data" placeholder="お題を考えて投稿しよう！" id="data" class="data">
+        <input type="submit" value="投稿" class="button">
+    </form>
     <section class="table">
         <div class="popular">開催中</div>
         <div class="sukuro">
             <ol>
+                {% for i in contents_list %}
                 <div class="keiji">
-                    <p>a</p>
+                    <p>{{i}}</p>
                 </div>
-                <div class="keiji">
-
-                </div>
-                <div class="keiji">
-
-                </div>
-
-                <div class="keiji">
-
-                </div>
-                <div class="keiji">
-
-                </div>
-
-                <div class="keiji">
-                </div>
-                <div class="keiji">
-                </div>
-                <div class="keiji">
-                </div>
-                <div class="keiji">
-                </div>
-                <div class="keiji">
-                </div>
+                {% endfor %}
             </ol>
         </div>
     </section>

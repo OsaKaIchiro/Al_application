@@ -26,7 +26,14 @@ async def get_log_in_page(request: Request):
 async def post(request: Request, response: Response, info_username_1: str = Form(...), info_password_1: str = Form(...), db: AsyncSession = Depends(get_db)):
     response_data = await sign_in(db, info_username_1, info_password_1)
     if response_data.success:
-        response.set_cookie(key="username", value=info_username_1)
+        response.set_cookie(
+            key="username",
+            value=info_username_1,
+            httponly=True,
+            max_age=7200,  # 2時間
+            secure=False,  # HTTPSを使用していない場合はFalse
+            path="/"       # Cookieをすべてのパスで利用可能にする
+        )
         credits_response = await get_money(db, info_username_1)
         return templates.TemplateResponse('home.html', {'request': request, 'username': info_username_1, 'credits': credits_response.credits})
     else:

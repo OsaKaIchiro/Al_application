@@ -1,4 +1,6 @@
 from pydantic import BaseModel
+from typing import Union, Optional, Any
 
 class GetMoney(BaseModel):
-    moeny: int
+    username: str
+    credits: Optional[int] = 0

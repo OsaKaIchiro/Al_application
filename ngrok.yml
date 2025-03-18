@@ -1,0 +1,10 @@
+version: "2"
+authtoken: ${NGROK_AUTHTOKEN} # あなたのngrok認証トークン
+tunnels:
+  nginx:
+    proto: http
+    addr: nginx:80
+    host_header: rewrite
+  app:
+    proto: http
+    addr: app:8000 # appコンテナの8000番

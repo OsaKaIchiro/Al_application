@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>top</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                /* 背景画像の設定 */
+                background-image: url('/S__10510396.jpg'); /* 画像のパスを指定 */
+                background-size: cover;  /* 背景画像を画面サイズに合わせて拡大縮小 */
+                background-position: center;  /* 画像の位置を中央に設定 */
+                background-attachment: fixed;  /* 背景画像を固定 */
+                margin: 0;  /* ページの余白をなくす */
+                height: 100vh;  /* ビューポートの高さを100%に設定 */
+                width: 100%;
+                z-index: 0;
+                display: flex; /* Flexbox を有効にする */
+                flex-direction: column; /* 縦一列に並べる */
+                justify-content: center; /* 水平方向の中央揃え */
+                align-items: center; /* 垂直方向の中央揃え */
+                text-align: center; /* テキストを中央揃え */
+            }
+
+            @media(min-width: 1300px){
+                /*1300px以上の時*/
+                h1{
+                    text-align: center;
+                    margin: 20%;
+                    margin-top: 50px;
+                    margin-bottom: 5%;
+                    font-size: 70px;
+                    font-weight: bold;
+                    z-index: 3;
+                }
+        
+                h2{
+                    text-align: right;
+                    margin: 5%;
+                    margin-top: 0;
+                    font-size: 45px;
+                    font-weight: bold;
+                    z-index: 3;
+                }
+
+                .btn12 {
+                    border: none;
+                    border-top: 1px solid #666;
+                    border-bottom: 1px solid #666;
+                    padding: 1em 3em;
+                    text-decoration: none;
+                    color: #000;
+                    position: relative;
+                    overflow: hidden;
+                    display: inline-block;
+                    transition: all .3s ease;
+                    width: 300px; /* ボタンの幅を300pxに設定 */
+                    text-align: center; /* ボタン内のテキストを中央揃え */
+                    font-size: 24px; /* テキストサイズを24pxに設定 */
+                }
+
+                .btn12:hover {
+                    color: white;
+                    background: black;
+                }
+            }
+            @media(max-width: 1300px){
+                /*1024px以上の時*/
+                h1{
+                    text-align: center;
+                    margin: 5%;
+                    margin-top: 250px;
+                    margin-bottom: 2%;
+                    font-size: 60px;
+                    font-weight: bold;
+                    z-index: 3;
+                }
+        
+                h2{
+                    text-align: right;
+                    margin: 5%;
+                    margin-top: 0;
+                    font-size: 40px;
+                    font-weight: bold;
+                    z-index: 3;
+                }
+                .btn12 {
+                    border: none;
+                    border-top: 1px solid #666;
+                    border-bottom: 1px solid #666;
+                    padding: 1em 3em;
+                    text-decoration: none;
+                    color: #000;
+                    position: relative;
+                    overflow: hidden;
+                    display: inline-block;
+                    transition: all .3s ease;
+                    width: 300px; /* ボタンの幅を300pxに設定 */
+                    text-align: center; /* ボタン内のテキストを中央揃え */
+                    font-size: 24px; /* テキストサイズを24pxに設定 */
+                }
+
+                .btn12:hover {
+                    color: #fff;
+                    background: #000;
+                }
+            }
+
+            @media(max-width: 1024px){
+                /*1024px以下、841px以上の時*/
+                h1{
+                    text-align: center;
+                    margin: 5%;
+                    margin-top: 300px;
+                    margin-bottom: 2%;
+                    font-size: 55px;
+                    font-weight: bold;
+                    z-index: 3;
+                }
+        
+                h2{
+                    text-align: right;
+                    margin: 5%;
+                    margin-top: 0;
+                    font-size: 30px;
+                    font-weight: bold;
+                    z-index: 3;
+                }
+                .btn12 {
+                    border: none;
+                    border-top: 1px solid #666;
+                    border-bottom: 1px solid #666;
+                    padding: 1em 3em;
+                    text-decoration: none;
+                    color: #000;
+                    position: relative;
+                    overflow: hidden;
+                    display: inline-block;
+                    transition: all .3s ease;
+                    width: 300px; /* ボタンの幅を300pxに設定 */
+                    text-align: center; /* ボタン内のテキストを中央揃え */
+                    font-size: 24px; /* テキストサイズを24pxに設定 */
+                }
+
+                .btn12:hover {
+                    color: #fff;
+                    background: #000;
+                }
+            }
+            @media(max-width: 750px){
+                /*840px以下、581px以上の時*/
+                h1{
+                    text-align: center;
+                    margin: 5%;
+                    margin-top: 300px;
+                    margin-bottom: 2%;
+                    font-size: 45px;
+                    font-weight: bold;
+                    z-index: 3;
+                }
+        
+                h2{
+                    text-align: right;
+                    margin: 5%;
+                    margin-top: 0;
+                    font-size: 25px;
+                    font-weight: bold;
+                    z-index: 3;
+                }
+                .btn12 {
+                    border: none;
+                    border-top: 1px solid #666;
+                    border-bottom: 1px solid #666;
+                    padding: 1em 3em;
+                    text-decoration: none;
+                    color: #000;
+                    position: relative;
+                    overflow: hidden;
+                    display: inline-block;
+                    transition: all .3s ease;
+                    width: 300px; /* ボタンの幅を300pxに設定 */
+                    text-align: center; /* ボタン内のテキストを中央揃え */
+                    font-size: 24px; /* テキストサイズを24pxに設定 */
+                }
+
+                .btn12:hover {
+                    color: #fff;
+                    background: #000;
+                }
+            }
+            @media(max-width: 500px){
+                /*580px以下、451px以上の時*/
+                h1{
+                    text-align: center;
+                    margin: 5%;
+                    margin-top: 300px;
+                    margin-bottom: 2%;
+                    font-size: 40px;
+                    font-weight: bold;
+                    z-index: 3;
+                }
+        
+                h2{
+                    text-align: right;
+                    margin: 5%;
+                    margin-top: 0;
+                    font-size: 20px;
+                    font-weight: bold;
+                    z-index: 3;
+                }
+                .btn12 {
+                    border: none;
+                    border-top: 1px solid #666;
+                    border-bottom: 1px solid #666;
+                    padding: 1em 3em;
+                    text-decoration: none;
+                    color: #000;
+                    position: relative;
+                    overflow: hidden;
+                    display: inline-block;
+                    transition: all .3s ease;
+                    width: 300px; /* ボタンの幅を300pxに設定 */
+                    text-align: center; /* ボタン内のテキストを中央揃え */
+                    font-size: 24px; /* テキストサイズを24pxに設定 */
+                }
+
+                .btn12:hover {
+                    color: #fff;
+                    background: #000;
+                }
+            }
+            @media(max-width: 350px){
+                /*350px以下の時*/
+                h1{
+                    text-align: center;
+                    margin: 5%;
+                    margin-top: 300px;
+                    margin-bottom: 2%;
+                    font-size: 35px;
+                    font-weight: bold;
+                    z-index: 3;
+                }
+        
+                h2{
+                    text-align: right;
+                    margin: 5%;
+                    margin-top: 0;
+                    font-size: 17px;
+                    font-weight: bold;
+                    z-index: 3;
+                }
+                .btn12 {
+                    border: none;
+                    border-top: 1px solid #666;
+                    border-bottom: 1px solid #666;
+                    padding: 1em 3em;
+                    text-decoration: none;
+                    color: #000;
+                    position: relative;
+                    overflow: hidden;
+                    display: inline-block;
+                    transition: all .3s ease;
+                    width: 300px; /* ボタンの幅を300pxに設定 */
+                    text-align: center; /* ボタン内のテキストを中央揃え */
+                    font-size: 24px; /* テキストサイズを24pxに設定 */
+                }
+
+                .btn12:hover {
+                    color: #fff;
+                    background: #000;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            択一未来予知
+        </h1>
+        <h2>
+            ～AIの考えを予測しろ！～
+        </h2>
+        <a href="/log_in_page" class="btn12">view more</a>
+    </body>
+</html>

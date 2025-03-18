@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    background: #FFAE38;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /* 背景色 /
+    background-image: url("../image/haikei.jpg");
+    / 画像 /
+    background-size: cover;
+    / 全画面 /
+    background-attachment: fixed;
+    / 固定 /
+    background-position: center center;
+    / 縦横中央 /
+    background-repeat: no-repeat;
+    / 全体のフォント */
+    font-family: "Potta One", system-ui;
+    color: white;
+    width: 100%;
+}
+
+body:after {
+    opacity: 0.1;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+
+}
+
+.home {
+    overflow:hidden;
+    width:240px;
+    height:144px;
+    padding:5px;
+}
+
+.home .img {
+    width:200px;
+    height:120px;
+    transition-duration: 0.3s; 
+}
+
+.home .img:hover{
+    transform: scale(1.1);
+}
+
+.aiai {
+    margin-left: 20px;
+    height: 80px;
+    width: 65%;
+    text-align: center;
+    font-size: 60px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #FFA933, #efdab9);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.popular {
+    width: 20%;
+    text-align: center;
+    font-size: 30px;
+    border-bottom: solid 1px #F5FF0E;
+    margin-left: 20px;
+}
+
+.table {
+    margin: 20px;
+    height: 500px;
+    width: 1500px;
+    background: #FFB300;
+    border-radius: 20px;
+}
+
+.sukuro {
+    overflow-y: scroll;
+    scrollbar-width: 8px;
+    width: 80%;
+    height: 70%;
+    margin: 20px;
+    padding: 10px;
+    border-left: solid 1px #F5FF0E;
+}
+
+.keiji {
+    color:black;
+    font-size: 1.5rem;
+    text-align:left;
+    padding: 5px 30px 5px 30px;
+    margin: 10px;
+    background-color: white;
+    height: 100px;
+    width: 92%;
+    border-radius: 10px;
+}
+
+.form{
+    text-align: right;
+    margin-right: 50px;
+    margin-top:-65px;
+}
+
+.form .data{
+    font-size:1.2rem;
+    width:50%;
+    line-height:2.4;
+    padding:10px;
+    border-radius: 10px;
+}
+
+.koushin{
+    margin-left:60px;
+}
+
+.button {
+    display       : inline-block;
+    border-radius : 50%;          /* 角丸       */
+    font-size     : 18pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 12px;   /* 余白       */
+    background    : #ffffff;     /* 背景色     */
+    color         : #000000;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    opacity       : 0.9;         /* 透明度     */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+}
+.button:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    opacity       : 1;           /* カーソル時透明度 */
+}
+
+.button_2 {
+    display       : inline-block;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 31pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 12px 12px;   /* 余白       */
+    background    : #ffffff;     /* 背景色     */
+    color         : #000000;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    opacity       : 0.9;         /* 透明度     */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+}
+.button_2:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    opacity       : 1;           /* カーソル時透明度 */
+}

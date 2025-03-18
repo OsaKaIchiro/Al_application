@@ -1,5 +1,7 @@
-from sqlalchemy import create_engine
-from Al_application.app.models.table import Base
+from sqlalchemy import create_engine, MetaData, Table, text
+from sqlalchemy.orm import sessionmaker
+from app.models.table import Base
+
 
 DB_URL = "mysql+pymysql://root@db:3306/demo?charset=utf8"
 engine = create_engine(DB_URL, echo=True)

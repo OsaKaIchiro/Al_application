@@ -1,4 +1,5 @@
-from sqlalchemy import Column, Integer, String, Date, ForeignKey
+
+from sqlalchemy import Column, Integer, String, Date, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String, Date
 from app.db import Base
@@ -14,8 +15,8 @@ class User(Base):
     }
 
     id = Column('id', Integer, primary_key=True, autoincrement=True)
-    username = Column('username', String(200), nullable=False, unique=True)
-    password = Column('password', String(200), nullable=False)
+    username = Column('username', String(200), nullable = False, unique=True)
+    password = Column('password', String(200), nullable = False)
     credits = Column('credits', Integer)
     practice_rank = Column('practice_rank', Integer)
     casual_rank = Column('casual_rank', Integer)
@@ -23,6 +24,7 @@ class User(Base):
 
     # Relationship to Practice_context
     practices = relationship("Practice_context", back_populates="user")
+
 
 class Practice_context(Base):
     """
@@ -40,5 +42,6 @@ class Practice_context(Base):
 
     # Relationship to User
     user = relationship("User", back_populates="practices")
+
 
 

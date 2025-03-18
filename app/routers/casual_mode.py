@@ -9,7 +9,6 @@ from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.schemas.casual_mode import ContextPut
 from app.cruds.casual_mode import put_context
-from app.gemini import ask_gemini
 from sqlalchemy.orm import sessionmaker
 import asyncio
 from fastapi import Depends

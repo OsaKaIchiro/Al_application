@@ -27,5 +27,5 @@ function loadGLTF(url) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadGLTF("adamHead.gltf");
+    loadGLTF("Creeper.glb");
 });

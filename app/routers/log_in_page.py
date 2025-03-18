@@ -11,7 +11,7 @@ from app.cruds.home import get_money
 router = APIRouter()
 templates = Jinja2Templates(directory = "app/templates")
 
-#ルートディレクトリに入った時log_onA_page.htmlが返される
+#ルートディレクトリに入った時a.htmlが返される
 @router.get('/', response_class=HTMLResponse)
 async def get(request: Request):
     return templates.TemplateResponse('a.html', {'request': request})

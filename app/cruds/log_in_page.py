@@ -1,5 +1,9 @@
 from sqlalchemy.ext.asyncio import AsyncSession
+<<<<<<< HEAD
 import app.models.table as sign_in_page_model
+=======
+import Al_application.app.models.table as sign_in_page_model
+>>>>>>> photo_add
 from sqlalchemy.future import select
 import app.schemas.log_in_page as sign_in_page_schema
 

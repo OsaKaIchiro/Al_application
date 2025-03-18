@@ -1,12 +1,12 @@
-from fastapi import APIRouter , Request , Form  , Depends
+from fastapi import APIRouter , Request , Form  , Depends 
 from fastapi.templating import Jinja2Templates
-from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse, RedirectResponse
 from app.db import get_db
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.schemas.log_in_page import UserResponse, LoginResponse, NewUserResponse
 from app.cruds.log_in_page import create_user, sign_in
 from app.cruds.home import get_money
+
 
 router = APIRouter()
 templates = Jinja2Templates(directory = "app/templates")

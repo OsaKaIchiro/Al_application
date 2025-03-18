@@ -1,20 +1,10 @@
-<<<<<<< HEAD
 version: "2"
 authtoken: ${NGROK_AUTHTOKEN} # あなたのngrok認証トークン
-=======
-#cspell:ignore Ajedt Hkqfwb Hkqfw NGROK authtoken ztil
-
-version: "2"
-authtoken: ${NGROK_AUTHTOKEN}
->>>>>>> ngrok_test
 tunnels:
   nginx:
     proto: http
     addr: nginx:80
     host_header: rewrite
-<<<<<<< HEAD
   app:
     proto: http
     addr: app:8000 # appコンテナの8000番
-=======
->>>>>>> ngrok_test

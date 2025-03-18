@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Money Ranking</title>
+</head>
+
+<body>
+    <h1>Practice Money Ranking</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Credits</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in ranking %}
+            <tr>
+                <td>{{ user.rank }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.credits }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,9 +1,5 @@
 from sqlalchemy.ext.asyncio import AsyncSession
-<<<<<<< HEAD
 import app.models.table as sign_in_page_model
-=======
-import Al_application.app.models.table as sign_in_page_model
->>>>>>> photo_add
 from sqlalchemy.future import select
 import app.schemas.log_in_page as sign_in_page_schema
 
@@ -38,7 +34,7 @@ async def create_user(
         user = sign_in_page_model.User()
         user.username = info_username_2
         user.password = info_password_2
-        user.credits = 1000 #初期値を1000円にします
+        user.credits =  1000 #初期値を1000円にします
         db.add(user)
         await db.commit()
         return sign_in_page_schema.NewUserResponse(success1=success1, success2=success2)

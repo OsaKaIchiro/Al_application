@@ -13,7 +13,7 @@
 
             body {
                 /* 背景画像の設定 */
-                background: gray;
+                background: skyblue;
                 background-size: cover;  /* 背景画像を画面サイズに合わせて拡大縮小 */
                 background-position: center;  /* 画像の位置を中央に設定 */
                 background-attachment: fixed;  /* 背景画像を固定 */
@@ -66,10 +66,126 @@
                 }
 
                 .btn12:hover {
-                    color: white;
-                    background: black;
+                    color: #fff;
+                    background: #000;
+                }
+
+                .circles{
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+
+                .circles li{
+                    position: absolute;
+                    display: block;
+                    list-style: none;
+                    width: 20px;
+                    height: 20px;
+                    background: rgba(255, 255, 255, 0.2);
+                    animation: animate 25s linear infinite;
+                    bottom: -150px;
+
+                }
+
+                .circles li:nth-child(1){
+                    left: 25%;
+                    width: 80px;
+                    height: 80px;
+                    animation-delay: 0s;
+                }
+
+
+                .circles li:nth-child(2){
+                    left: 10%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 2s;
+                    animation-duration: 12s;
+                }
+
+                .circles li:nth-child(3){
+                    left: 70%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 4s;
+                }
+
+                .circles li:nth-child(4){
+                    left: 40%;
+                    width: 60px;
+                    height: 60px;
+                    animation-delay: 0s;
+                    animation-duration: 18s;
+                }
+
+                .circles li:nth-child(5){
+                    left: 65%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 0s;
+                }
+
+                .circles li:nth-child(6){
+                    left: 75%;
+                    width: 110px;
+                    height: 110px;
+                    animation-delay: 3s;
+                }
+
+                .circles li:nth-child(7){
+                    left: 35%;
+                    width: 150px;
+                    height: 150px;
+                    animation-delay: 7s;
+                }
+
+                .circles li:nth-child(8){
+                    left: 50%;
+                    width: 25px;
+                    height: 25px;
+                    animation-delay: 15s;
+                    animation-duration: 45s;
+                }
+
+                .circles li:nth-child(9){
+                    left: 20%;
+                    width: 15px;
+                    height: 15px;
+                    animation-delay: 2s;
+                    animation-duration: 35s;
+                }
+
+                .circles li:nth-child(10){
+                    left: 85%;
+                    width: 150px;
+                    height: 150px;
+                    animation-delay: 0s;
+                    animation-duration: 11s;
+                }
+
+
+
+                @keyframes animate {
+                
+                    0%{
+                        transform: translateY(0) rotate(0deg);
+                        opacity: 1;
+                        border-radius: 0;
+                    }
+                
+                    100%{
+                        transform: translateY(-1000px) rotate(720deg);
+                        opacity: 0;
+                        border-radius: 50%;
+                    }
                 }
             }
+
             @media(max-width: 1300px){
                 /*1024px以上の時*/
                 h1{
@@ -109,6 +225,121 @@
                 .btn12:hover {
                     color: #fff;
                     background: #000;
+                }
+
+                .circles{
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+
+                .circles li{
+                    position: absolute;
+                    display: block;
+                    list-style: none;
+                    width: 20px;
+                    height: 20px;
+                    background: rgba(255, 255, 255, 0.2);
+                    animation: animate 25s linear infinite;
+                    bottom: -150px;
+
+                }
+
+                .circles li:nth-child(1){
+                    left: 25%;
+                    width: 80px;
+                    height: 80px;
+                    animation-delay: 0s;
+                }
+
+
+                .circles li:nth-child(2){
+                    left: 10%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 2s;
+                    animation-duration: 12s;
+                }
+
+                .circles li:nth-child(3){
+                    left: 70%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 4s;
+                }
+
+                .circles li:nth-child(4){
+                    left: 40%;
+                    width: 60px;
+                    height: 60px;
+                    animation-delay: 0s;
+                    animation-duration: 18s;
+                }
+
+                .circles li:nth-child(5){
+                    left: 65%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 0s;
+                }
+
+                .circles li:nth-child(6){
+                    left: 75%;
+                    width: 110px;
+                    height: 110px;
+                    animation-delay: 3s;
+                }
+
+                .circles li:nth-child(7){
+                    left: 35%;
+                    width: 150px;
+                    height: 150px;
+                    animation-delay: 7s;
+                }
+
+                .circles li:nth-child(8){
+                    left: 50%;
+                    width: 25px;
+                    height: 25px;
+                    animation-delay: 15s;
+                    animation-duration: 45s;
+                }
+
+                .circles li:nth-child(9){
+                    left: 20%;
+                    width: 15px;
+                    height: 15px;
+                    animation-delay: 2s;
+                    animation-duration: 35s;
+                }
+
+                .circles li:nth-child(10){
+                    left: 85%;
+                    width: 150px;
+                    height: 150px;
+                    animation-delay: 0s;
+                    animation-duration: 11s;
+                }
+
+
+
+                @keyframes animate {
+                
+                    0%{
+                        transform: translateY(0) rotate(0deg);
+                        opacity: 1;
+                        border-radius: 0;
+                    }
+                
+                    100%{
+                        transform: translateY(-1000px) rotate(720deg);
+                        opacity: 0;
+                        border-radius: 50%;
+                    }
                 }
             }
 
@@ -152,6 +383,121 @@
                     color: #fff;
                     background: #000;
                 }
+
+                .circles{
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+
+                .circles li{
+                    position: absolute;
+                    display: block;
+                    list-style: none;
+                    width: 20px;
+                    height: 20px;
+                    background: rgba(255, 255, 255, 0.2);
+                    animation: animate 25s linear infinite;
+                    bottom: -150px;
+
+                }
+
+                .circles li:nth-child(1){
+                    left: 25%;
+                    width: 80px;
+                    height: 80px;
+                    animation-delay: 0s;
+                }
+
+
+                .circles li:nth-child(2){
+                    left: 10%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 2s;
+                    animation-duration: 12s;
+                }
+
+                .circles li:nth-child(3){
+                    left: 70%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 4s;
+                }
+
+                .circles li:nth-child(4){
+                    left: 40%;
+                    width: 60px;
+                    height: 60px;
+                    animation-delay: 0s;
+                    animation-duration: 18s;
+                }
+
+                .circles li:nth-child(5){
+                    left: 65%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 0s;
+                }
+
+                .circles li:nth-child(6){
+                    left: 75%;
+                    width: 110px;
+                    height: 110px;
+                    animation-delay: 3s;
+                }
+
+                .circles li:nth-child(7){
+                    left: 35%;
+                    width: 150px;
+                    height: 150px;
+                    animation-delay: 7s;
+                }
+
+                .circles li:nth-child(8){
+                    left: 50%;
+                    width: 25px;
+                    height: 25px;
+                    animation-delay: 15s;
+                    animation-duration: 45s;
+                }
+
+                .circles li:nth-child(9){
+                    left: 20%;
+                    width: 15px;
+                    height: 15px;
+                    animation-delay: 2s;
+                    animation-duration: 35s;
+                }
+
+                .circles li:nth-child(10){
+                    left: 85%;
+                    width: 150px;
+                    height: 150px;
+                    animation-delay: 0s;
+                    animation-duration: 11s;
+                }
+
+
+
+                @keyframes animate {
+                
+                    0%{
+                        transform: translateY(0) rotate(0deg);
+                        opacity: 1;
+                        border-radius: 0;
+                    }
+                
+                    100%{
+                        transform: translateY(-1000px) rotate(720deg);
+                        opacity: 0;
+                        border-radius: 50%;
+                    }
+                }
             }
             @media(max-width: 750px){
                 /*840px以下、581px以上の時*/
@@ -192,6 +538,121 @@
                 .btn12:hover {
                     color: #fff;
                     background: #000;
+                }
+
+                .circles{
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+
+                .circles li{
+                    position: absolute;
+                    display: block;
+                    list-style: none;
+                    width: 20px;
+                    height: 20px;
+                    background: rgba(255, 255, 255, 0.2);
+                    animation: animate 25s linear infinite;
+                    bottom: -150px;
+
+                }
+
+                .circles li:nth-child(1){
+                    left: 25%;
+                    width: 80px;
+                    height: 80px;
+                    animation-delay: 0s;
+                }
+
+
+                .circles li:nth-child(2){
+                    left: 10%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 2s;
+                    animation-duration: 12s;
+                }
+
+                .circles li:nth-child(3){
+                    left: 70%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 4s;
+                }
+
+                .circles li:nth-child(4){
+                    left: 40%;
+                    width: 60px;
+                    height: 60px;
+                    animation-delay: 0s;
+                    animation-duration: 18s;
+                }
+
+                .circles li:nth-child(5){
+                    left: 65%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 0s;
+                }
+
+                .circles li:nth-child(6){
+                    left: 75%;
+                    width: 110px;
+                    height: 110px;
+                    animation-delay: 3s;
+                }
+
+                .circles li:nth-child(7){
+                    left: 35%;
+                    width: 150px;
+                    height: 150px;
+                    animation-delay: 7s;
+                }
+
+                .circles li:nth-child(8){
+                    left: 50%;
+                    width: 25px;
+                    height: 25px;
+                    animation-delay: 15s;
+                    animation-duration: 45s;
+                }
+
+                .circles li:nth-child(9){
+                    left: 20%;
+                    width: 15px;
+                    height: 15px;
+                    animation-delay: 2s;
+                    animation-duration: 35s;
+                }
+
+                .circles li:nth-child(10){
+                    left: 85%;
+                    width: 150px;
+                    height: 150px;
+                    animation-delay: 0s;
+                    animation-duration: 11s;
+                }
+
+
+
+                @keyframes animate {
+                
+                    0%{
+                        transform: translateY(0) rotate(0deg);
+                        opacity: 1;
+                        border-radius: 0;
+                    }
+                
+                    100%{
+                        transform: translateY(-1000px) rotate(720deg);
+                        opacity: 0;
+                        border-radius: 50%;
+                    }
                 }
             }
             @media(max-width: 500px){
@@ -234,6 +695,121 @@
                     color: #fff;
                     background: #000;
                 }
+
+                .circles{
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+
+                .circles li{
+                    position: absolute;
+                    display: block;
+                    list-style: none;
+                    width: 20px;
+                    height: 20px;
+                    background: rgba(255, 255, 255, 0.2);
+                    animation: animate 25s linear infinite;
+                    bottom: -150px;
+
+                }
+
+                .circles li:nth-child(1){
+                    left: 25%;
+                    width: 80px;
+                    height: 80px;
+                    animation-delay: 0s;
+                }
+
+
+                .circles li:nth-child(2){
+                    left: 10%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 2s;
+                    animation-duration: 12s;
+                }
+
+                .circles li:nth-child(3){
+                    left: 70%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 4s;
+                }
+
+                .circles li:nth-child(4){
+                    left: 40%;
+                    width: 60px;
+                    height: 60px;
+                    animation-delay: 0s;
+                    animation-duration: 18s;
+                }
+
+                .circles li:nth-child(5){
+                    left: 65%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 0s;
+                }
+
+                .circles li:nth-child(6){
+                    left: 75%;
+                    width: 110px;
+                    height: 110px;
+                    animation-delay: 3s;
+                }
+
+                .circles li:nth-child(7){
+                    left: 35%;
+                    width: 150px;
+                    height: 150px;
+                    animation-delay: 7s;
+                }
+
+                .circles li:nth-child(8){
+                    left: 50%;
+                    width: 25px;
+                    height: 25px;
+                    animation-delay: 15s;
+                    animation-duration: 45s;
+                }
+
+                .circles li:nth-child(9){
+                    left: 20%;
+                    width: 15px;
+                    height: 15px;
+                    animation-delay: 2s;
+                    animation-duration: 35s;
+                }
+
+                .circles li:nth-child(10){
+                    left: 85%;
+                    width: 150px;
+                    height: 150px;
+                    animation-delay: 0s;
+                    animation-duration: 11s;
+                }
+
+
+
+                @keyframes animate {
+                
+                    0%{
+                        transform: translateY(0) rotate(0deg);
+                        opacity: 1;
+                        border-radius: 0;
+                    }
+                
+                    100%{
+                        transform: translateY(-1000px) rotate(720deg);
+                        opacity: 0;
+                        border-radius: 50%;
+                    }
+                }
             }
             @media(max-width: 350px){
                 /*350px以下の時*/
@@ -275,70 +851,120 @@
                     color: #fff;
                     background: #000;
                 }
+
+                .circles{
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                }
+
+                .circles li{
+                    position: absolute;
+                    display: block;
+                    list-style: none;
+                    width: 20px;
+                    height: 20px;
+                    background: rgba(255, 255, 255, 0.2);
+                    animation: animate 25s linear infinite;
+                    bottom: -150px;
+                }
+
+                .circles li:nth-child(1){
+                    left: 25%;
+                    width: 80px;
+                    height: 80px;
+                    animation-delay: 0s;
+                }
+
+
+                .circles li:nth-child(2){
+                    left: 10%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 2s;
+                    animation-duration: 12s;
+                }
+
+                .circles li:nth-child(3){
+                    left: 70%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 4s;
+                }
+
+                .circles li:nth-child(4){
+                    left: 40%;
+                    width: 60px;
+                    height: 60px;
+                    animation-delay: 0s;
+                    animation-duration: 18s;
+                }
+
+                .circles li:nth-child(5){
+                    left: 65%;
+                    width: 20px;
+                    height: 20px;
+                    animation-delay: 0s;
+                }
+
+                .circles li:nth-child(6){
+                    left: 75%;
+                    width: 110px;
+                    height: 110px;
+                    animation-delay: 3s;
+                }
+
+                .circles li:nth-child(7){
+                    left: 35%;
+                    width: 150px;
+                    height: 150px;
+                    animation-delay: 7s;
+                }
+
+                .circles li:nth-child(8){
+                    left: 50%;
+                    width: 25px;
+                    height: 25px;
+                    animation-delay: 15s;
+                    animation-duration: 45s;
+                }
+
+                .circles li:nth-child(9){
+                    left: 20%;
+                    width: 15px;
+                    height: 15px;
+                    animation-delay: 2s;
+                    animation-duration: 35s;
+                }
+
+                .circles li:nth-child(10){
+                    left: 85%;
+                    width: 150px;
+                    height: 150px;
+                    animation-delay: 0s;
+                    animation-duration: 11s;
+                }
+
+
+
+                @keyframes animate {
+                    0%{
+                        transform: translateY(0) rotate(0deg);
+                        opacity: 1;
+                        border-radius: 0;
+                    }
+                    100%{
+                        transform: translateY(-1000px) rotate(720deg);
+                        opacity: 0;
+                        border-radius: 50%;
+                    }
+                }
             }
         </style>
-
-        <script>
-            var background = {}
-
-            background.initializr = function (){
-
-                var $this = this;
-
-                //option
-                $this.id = "background_css3";
-                $this.style = {bubbles_color:"#fff",stroke_width:0, stroke_color :"black"};
-                $this.bubbles_number = 30;
-                $this.speed = [1500,8000]; //milliseconds
-                $this.max_bubbles_height = $this.height;
-                $this.shape = false // 1 : circle | 2 : triangle | 3 : rect | false :random
-
-                if($("#"+$this.id).length > 0){
-                    $("#"+$this.id).remove();
-                }
-                $this.object = $("<div style='z-index:-1;position:absolute;bottom:0' id='"+$this.id+"'></div>").appendTo("body");
-
-                $this.ww = $(window).width();
-                $this.wh = $(window).height();
-                $this.width = $this.object.width($this.ww);
-                $this.height = $this.object.height($this.wh);
-
-                $("body").prepend("<style>.shape_background {transform-origin:center; width:80px; height:80px; background: "+$this.style.bubbles_color+"; position: absolute}</style>");
-
-                for (i = 0; i < $this.bubbles_number; i++) {
-                    $this.generate_bubbles();
-                }
-            }
-
-            background.generate_bubbles = function() {
-                var $this = this;
-                var base = $("<div class='shape_background'></div>");
-                var shape_type = $this.shape ? $this.shape : Math.floor($this.rn(1,3));
-                if(shape_type == 1) {
-                    var bolla = base.css({borderRadius: "50%"});
-                } else if (shape_type == 2) {
-                    var bolla = base.css({width:0, height:0, "border-style":"solid","border-width":"0 40px 69.3px 40px","border-color":"transparent transparent "+$this.style.bubbles_color+" transparent", background:"transparent"}); 
-                } else {
-                    var bolla = base; 
-                }    
-                var rn_size = $this.rn(.8,1.2);
-                bolla.css({"transform":"scale("+rn_size+") rotate("+$this.rn(-360,360)+"deg)", top:$this.wh+100, left:$this.rn(-60, $this.ww+60)});        
-                bolla.appendTo($this.object);
-                bolla.transit({top: $this.rn($this.wh/2,$this.wh/2-60), "transform":"scale("+rn_size+") rotate("+$this.rn(-360,360)+"deg)", opacity: 0},$this.rn($this.speed[0],$this.speed[1]), function(){
-                    $(this).remove();
-                    $this.generate_bubbles();
-                });
-            }
-
-            background.rn = function(from, to, arr) {
-                if(arr){
-                    return Math.random() * (to - from + 1) + from;
-                } else {
-                    return Math.floor(Math.random() * (to - from + 1) + from);
-                }
-            }
-            background.initializr();
-        </script>
     </head>
     <body>
         <h1>
@@ -348,5 +974,17 @@
             ～AIの考えを予測しろ！～
         </h2>
         <a href="/log_in_page" class="btn12">view more</a>
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+    </ul>
     </body>
 </html>

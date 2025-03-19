@@ -7,24 +7,120 @@
     <title>ゲームホーム画面</title>
     <script src="https://unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/app/static/home.css') }}">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Merienda");
+            
+        .background {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        body {
+            background: black;
+            color: black;
+            font-family: "Merienda", cursive;
+            z-index: 4;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .left-panel {
+            width: 40%;
+            height: 80vh;
+        }
+
+        .canvas-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .right-panel {
+            display: flex;
+            flex-direction: row; /* Change to row for horizontal layout */
+            justify-content: center; /* Center the buttons */
+            align-items: center;
+            gap: 20px;
+            left: 50%;
+        }
+
+        .button {
+            background: #ffffff;
+            border: 2px solid #000000;
+            padding: 30px 60px; /* Increase padding for larger size */
+            font-size: 32px; /* Increase font size */
+            width: 300px; /* Increase width */
+            height: 150px; /* Increase height */
+            cursor: pointer;
+            border-radius: 8px;
+            z-index: 3;
+        }
+
+        .bottom-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 3;
+        }
+
+        .money-display {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.8); /* Change background to light color */
+            color: black; /* Change text color to black */
+            padding: 20px; /* Increase padding for larger size */
+            font-size: 32px; /* Increase font size */
+            border-radius: 8px;
+        }
+
+        .box {
+            background: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            position: absolute;
+            z-index: 1;
+        }
+
+        a {
+            color: #0bd;
+        }
+    </style>
 </head>
 
 <body x-data="{ money: {{ credits }} }">
-    <div class="money-display">所持金: <span x-text="money"></span></div>
+    <div class="money-display" style="font-size: 2em;">所持金: <span x-text="money"></span></div>
     <div class="container">
         <div class="left-panel">
             <canvas id="avatarCanvas" class="canvas-container"></canvas>
         </div>
-        <div class="right-panel">
-            <button class="button" @click="location.href='仮_practice.html'">仮_Practice モード</button>
-            <button class="button" @click="location.href='/casual_mode'">casual モード</button>
+        <div class="right-panel" style="display: flex; justify-content: center; gap: 20px;">
+            <button class="button" style="font-size: 2em;" @click="location.href='/casual_mode'">casual モード</button>
+            <button class="button" style="font-size: 2em;" @click="location.href='/ranking'">ランキング</button>
         </div>
-    </div>
-
-    <div class="bottom-nav">
-        <button class="button" @click="location.href='/ranking'">仮_ランキング</button>
-        <button class="button" @click="location.href='仮_shop.html'">仮_ショップ</button>
-        <button class="button" @click="location.href='仮_options.html'">仮_オプション</button>
     </div>
 
     <canvas class="background"></canvas>

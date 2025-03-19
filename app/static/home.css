@@ -1,15 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Merienda");
+
+.background {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 body {
-    background: url('../pictures/spotlight.jpg') no-repeat center center/cover;
-    font-family: Arial, sans-serif;
-    color: white;
+    background: black;
+    color: black;
+    font-family: "Merienda", cursive;
+    z-index: 4;
 }
 
 .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 100vh;
     padding: 20px;
+    justify-content: center;
 }
 
 .left-panel {
@@ -36,6 +58,7 @@ body {
     font-size: 18px;
     cursor: pointer;
     border-radius: 8px;
+    z-index: 3;
 }
 
 .bottom-nav {
@@ -54,4 +77,17 @@ body {
     background: rgba(0, 0, 0, 0.5);
     padding: 10px;
     border-radius: 8px;
+}
+
+.box {
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+}
+
+a {
+    color: #0bd;
 }

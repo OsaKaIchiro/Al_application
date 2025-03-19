@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/app/static/log_in_page.css') }}">
 </head>
 <style>
@@ -63,8 +63,183 @@ h1 {
     font-size:16px;
 }
 </style>
+=======
+    <style>
+        @charset "UTF-8";
+
+        *{
+            box-sizing:border-box;
+        }
+        
+        body{
+            background-image:linear-gradient(to right, white, gray)
+        }
+        
+        h1 {
+            padding:0 0.5em;
+            color:white;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: black;
+            font-size:3em;
+        }
+        
+        .button {
+            display       : inline-block;
+            border-radius : 43%;          /* 角丸       */
+            font-size     : 19pt;        /* 文字サイズ */
+            text-align    : center;      /* 文字位置   */
+            cursor        : pointer;     /* カーソル   */
+            padding       : 17px 28px;   /* 余白       */
+            background    : #ffffff;     /* 背景色     */
+            color         : #000000;     /* 文字色     */
+            line-height   : 1em;         /* 1行の高さ  */
+            opacity       : 0.9;         /* 透明度     */
+            transition    : .3s;         /* なめらか変化 */
+            box-shadow    : 8px 8px #666666;  /* 影の設定 */
+            border        : 2px solid #000000;
+        }
+        
+        .button:hover {
+            box-shadow    : none;        /* カーソル時の影消去 */
+            opacity       : 1;           /* カーソル時透明度 */
+        }
+        
+        .under_line{
+            height:10px;
+            color:gray;
+            background-color:gray;
+            border-color:gray;
+        }
+        
+        .text{
+            font-size:24px;
+            text-align:center;
+        }
+        
+        #error_message{
+            font-size:16px;
+        }
+        
+        .circles{
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .circles li{
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+            
+        }
+        
+        .circles li:nth-child(1){
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+        
+        
+        .circles li:nth-child(2){
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+        
+        .circles li:nth-child(3){
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+        
+        .circles li:nth-child(4){
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+        
+        .circles li:nth-child(5){
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+        
+        .circles li:nth-child(6){
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+        
+        .circles li:nth-child(7){
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+        
+        .circles li:nth-child(8){
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+        
+        .circles li:nth-child(9){
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+        
+        .circles li:nth-child(10){
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+        
+        
+        
+        @keyframes animate {
+        
+            0%{
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+        
+            100%{
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        
+        }
+    </style>
+</head>
+>>>>>>> 479d4ec1e505d8cd222e213b6d3372511209a6e5
 <body>
-    <h1>ログイン画面</h1>
+    <h1>ログインページ</h1>
     <hr class="under_line">
     <form method="post" class="text">
         <label for="n1">Username</label>
@@ -77,13 +252,24 @@ h1 {
     </form>
     <br>
     {% if success == 0 %}
-    <p id="error_message">※認証に失敗しました。'Username'もしくは'Password'が間違っている可能性があります。</p>
+        <p id="error_message">※認証に失敗しました。'Username'もしくは'Password'が間違っている可能性があります。</p>
     {% endif %}
     <hr class="under_line">
     <div class="text">
         <p>アカウント新規作成はこちらから↓↓</p>
         <a href="/new" class="button">新規登録</a>
     </div>
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+</ul>
 </body>
-
 </html>

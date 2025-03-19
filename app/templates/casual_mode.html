@@ -182,7 +182,8 @@ body:after {
 
         <div class="home">
             <a href="/home" class="img_link">
-                <img src="{{ url_for('static', path='/app/static/pictures/yajirushi_page-0001.jpg') }}" alt="矢印" class="img">
+                <img src="{{ url_for('static', path='/app/static/pictures/yajirushi_page-0001.jpg') }}" alt="矢印"
+                    class="img">
             </a>
         </div>
 
@@ -190,9 +191,14 @@ body:after {
     </div>
 
     <form method="put" class="koushin">
-        <input type="submit" value="更新" class="button_2">      &nbsp; 
+        <input type="submit" value="更新" class="button_2"> &nbsp;
+
+        {% if miss %}
+        <p style="color: red;">{{ miss }}</p>
+        {% endif %}
     </form>
     <form method="post" class="form">
+        <input type="text" name="username" placeholder="ユーザー名を入力してください" required>
         <input type="text" name="idea_data" placeholder="お題を考えて投稿しよう！" id="data" class="data">
         <input type="submit" value="投稿" class="button">
     </form>
@@ -203,6 +209,7 @@ body:after {
                 {% for i in contents_list %}
                 <div class="keiji">
                     <p>{{i}}</p>
+
                 </div>
                 {% endfor %}
             </ol>

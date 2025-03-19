@@ -15,3 +15,11 @@ templates = Jinja2Templates(directory="app/templates")
 async def practice_ranking(request: Request, db: AsyncSession = Depends(get_db)):
     ranking = await get_money_ranking(db)
     return templates.TemplateResponse('ranking.html', {'request': request, 'ranking': ranking})
+
+@router.get('/ranking2', response_class=HTMLResponse)
+async def practice_ranking(request: Request, db: AsyncSession = Depends(get_db)):
+    return templates.TemplateResponse('ranking2.html', {'request': request,})
+
+@router.get('/ranking3', response_class=HTMLResponse)
+async def practice_ranking(request: Request, db: AsyncSession = Depends(get_db)):
+    return templates.TemplateResponse('ranking3.html', {'request': request})

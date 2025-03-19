@@ -8,39 +8,10 @@
     <title>ランキング</title>
 </head>
 <style>
-    body {
-        /* 背景画像の設定 */
-        background-image: url('photo/Gemini_Generated_Image_sgvptrsgvptrsgvp.jpg');
-        /* 画像のパスを指定 */
-        background-size: cover;
-        /* 背景画像を画面サイズに合わせて拡大縮小 */
-        background-position: center;
-        /* 画像の位置を中央に設定 */
-        background-attachment: fixed;
-        /* 背景画像を固定 */
-        margin: 0;
-        /* ページの余白をなくす */
-        height: 100%;
-        /* ビューポートの高さを100%に設定 */
-        width: 95%;
-        z-index: 0;
-    }
-
-    body::before {
-        content: "";
-        background-color: rgba(225, 225, 225, 0.8);
-        position: fixed;
-        /*↑ぼかしを全画面にするのに重要*/
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 105%;
-        height: 105%;
-        z-index: 1;
-        background-size: cover;
-        background-attachment: fixed;
-        margin: 0;
-    }
+body{
+    background:linear-gradient(to right,white,gray);
+    width: 95%;
+}
 
     h1,
     p,
@@ -49,43 +20,13 @@
     aside,
     footer,
     p1,
-    h3 {
+    h3,.button5{
         z-index: 7;
         position: relative;
         -moz-box-align: center;
     }
 
-    aside {
-        /*background-image: url('photo/Gemini_Generated_Image_x6cprex6cprex6cp.jpg'); /* 画像のパスを指定 */
-        background-size: 100%;
-        /* 背景画像を画面サイズに合わせて拡大縮小 */
-        background-position: center;
-        /* 画像の位置を中央に設定 */
-        background-repeat: no-repeat;
-        height: 100%;
-        /* ビューポートの高さを100%に設定 */
-        width: 95%;
-        z-index: 2;
-        border-radius: 20px;
-        margin-top: -10px;
-        border-radius: 50px;
-    }
 
-    aside::before {
-        content: "";
-        /*background-color: rgba(225, 225, 225, 0.4);*/
-        position: fixed;
-        /*↑ぼかしを全画面にするのに重要*/
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 105%;
-        height: 105%;
-        z-index: 3;
-        background-size: cover;
-        background-attachment: fixed;
-        margin: 0;
-    }
 
         *{
         box-sizing: border-box;
@@ -102,15 +43,25 @@
         margin: 0;
         padding-left: 10px;
     }
-    h1{
-        text-align: left;
+    h1 {
+        padding:0 0.5em;
+        color:white;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: black;
+        font-size:3em;
         padding-left: 15%;
+        padding-top: 25px;
+    
+    }
+    /*h1{
+        text-align: left;
+
         margin: 5%;
         font-size: 50px;
         font-weight: bold;
         margin-top: 45px;
         font-family: 'Courier New', Courier, monospace;
-    }
+    }*/
     nav{
         grid-column-start: left;
         grid-column-end: main;
@@ -124,19 +75,18 @@
         font-weight: bold;
 
     }
+
     aside{
         grid-column-start: left;
         grid-column-end: main;
         grid-row-start: top;
         grid-row-end: main;
         margin: 5%;
-        margin-top: 0;
-        text-align: center;
-        position: relative;
-
+        margin-left: 5px;
+        margin-top: 11%;
+        font-size: 15px;
+        z-index: 1;
     }
-
-
 
     main{
         grid-column-start: main;
@@ -144,16 +94,16 @@
         grid-row-start: main;
         grid-row-end: footer;
         margin: 5%;
+        z-index: 2;
 
     }
     body{
-        position: absolute;
+        position: relative;
         margin: 0;
-        background: black;
         display: grid;
         /*なんか分けれるらしい*/
         grid-template-rows:
-            [header] 7% [top] 15% [main] auto [footer];
+            [header] 5% [top] 15% [main] auto [footer];
             /*なんか上下に分けてるらしい*/
         grid-template-columns: 
             [left] 30% [main] 20% [right] 50% [end];
@@ -161,37 +111,50 @@
     }
 
     
-    .button{
+    /*.button{
         position: relative;
         margin: 10%;
         margin-left: 20%;
+    }*/
+    @media(min-width: 682px){
+    .button5{
+        margin-left: 10%;
     }
-    .button {
-        display      : inline-block;
-        border-radius: 50%;                   /* 角丸 */
-        box-shadow   : 6px 6px 3px #474747;  /* 影の設定 */
-        opacity      : .8;                    /* 透明度 */
-        cursor       : pointer;              /* カーソル形状 */
-        transition   : .3s;                  /* なめらか変化 */
-        z-index: 5;
     }
-    .button:hover {
-        box-shadow   : none;                 /* 影の設定 */
-        opacity      : 0.6;                  /* 透明度 */
-        z-index: 5;
+    aside a{
+        display: inline-block;
+        border-radius : 43%;          /* 角丸       */
+        font-size     : 15pt;        /* 文字サイズ */
+        text-align    : center;      /* 文字位置   */
+        cursor        : pointer;     /* カーソル   */
+        padding       : 17px 28px;   /* 余白       */
+        background    : #ffffff;     /* 背景色     */
+        color         : #000000;     /* 文字色     */
+        line-height   : 1em;         /* 1行の高さ  */
+        opacity       : 0.9;         /* 透明度     */
+        transition    : .3s;         /* なめらか変化 */
+        box-shadow    : 8px 8px #666666;  /* 影の設定 */
+        border        : 2px solid #000000;
+
+    }
+
+    aside a:hover {
+        box-shadow    : none;        /* カーソル時の影消去 */
+        opacity       : 1;           /* カーソル時透明度 */
     }
     main{
         content: "";
-        background-color: rgba(244, 146, 33, 0.9);
+        background-color: rgba(145, 143, 143, 0.9);
         width: 100%;
         z-index: 3;
         background-size: cover;
         background-attachment: fixed;
         border-radius: 20px;
+        margin-bottom: 30px;
     }
     nav{
         content: "";
-        background-color: rgba(244, 146, 33, 0.9);
+        background-color: rgba(145, 143, 143, 0.9);
         width: 100%;
         z-index: 3;
         background-size: cover;
@@ -206,7 +169,7 @@
         text-align: left;
         color: black;
         border:groove 10px;
-        border-color: rgb(207, 207, 207);
+        border-color: rgb(92, 92, 92);
         padding: 20px;
         padding-left: 5px; 
         margin: 28px;
@@ -224,7 +187,7 @@
         text-align: center;
         color:black;
         border:groove 7px;
-        border-color: rgb(207, 207, 207);
+        border-color: rgb(92, 92, 92);
         padding: 10px;
         margin: 18px;
     }
@@ -233,7 +196,7 @@
         border-radius: 5px;
         background: white;
         transition    : .3s;         /* なめらか変化 */
-        box-shadow    : 4px 4px #666666;  /* 影の設定 */
+        box-shadow    : 4px 4px #5a5a5a;  /* 影の設定 */
         cursor: pointer;
     }
     .nav:hover{
@@ -244,7 +207,7 @@
         text-align: center;
         color:black;
         border:groove 7px;
-        border-color: rgb(207, 207, 207);
+        border-color: rgb(92, 92, 92);
         padding: 10px;
         margin: 18px;
     }
@@ -274,15 +237,13 @@
         font-family: 'Courier New', Courier, monospace;
     }
 </style>
-<script>
-    function goClick() {
-        // クリック時の動作を指定できます
-        location.href = "home.html";
-    }
-</script>
+
 
 <body>
-    <img src="pictures/S__10502154.jpg" class="button" onclick="goClick()" width="200" height="120" alt="サンプルボタン">
+    <aside>
+        <a href="home.html" class="button5">ホームに戻る</a>
+    </aside>
+    
     <header>
         <h1>
             ランキング
@@ -291,18 +252,16 @@
     <nav>
         <ul>
             <li class="nav0">
-                <a href="ranking.html">らんきんぐ１</a><br>
+                <a href="ranking.html">所持金</a><br>
             </li>
             <li class="nav">
-                <a href="ranking2.html">らんきんぐ２</a><br>
+                <a href="ranking2.html">勝ち数</a><br>
             </li>
             <li class="nav">
-                <a href="ranking3.html">らんきんぐ３</a><br>
+                <a href="ranking3.html">勝率</a><br>
             </li>
         </ul>
     </nav>
-    <aside>
-    </aside>
 
     <main>
         <p>

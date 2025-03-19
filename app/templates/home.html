@@ -65,7 +65,7 @@
         .button {
             background: #ffffff;
             border: 2px solid #000000;
-            padding: 10px 10px; /* Increase padding for larger size */
+            padding: 30px 60px; /* Increase padding for larger size */
             font-size: 32px; /* Increase font size */
             width: 300px; /* Increase width */
             height: 150px; /* Increase height */
@@ -93,6 +93,7 @@
             padding: 20px; /* Increase padding for larger size */
             font-size: 32px; /* Increase font size */
             border-radius: 8px;
+            z-index: 3;
         }
 
         .box {
@@ -106,6 +107,25 @@
 
         a {
             color: #0bd;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .right-panel {
+                flex-direction: column; /* Stack buttons vertically on small screens */
+            }
+
+            .button {
+                width: 100%; /* Full width buttons on small screens */
+                height: auto; /* Adjust height automatically */
+                font-size: 24px; /* Adjust font size */
+                padding: 20px; /* Adjust padding */
+            }
+
+            .money-display {
+                font-size: 24px; /* Adjust font size */
+                padding: 10px; /* Adjust padding */
+            }
         }
     </style>
 </head>
